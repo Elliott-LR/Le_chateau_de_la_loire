@@ -20,8 +20,6 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: aliceblue;
     display: inline-block;
 }
 
@@ -38,6 +36,8 @@ li {
     padding: 16px 55px;
     border-radius: 15px;
     font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
 }
 
 /*HEADER*/
@@ -53,7 +53,11 @@ header {
     left: 0;
     z-index: 1;
     width: 100%;
+}
 
+header a {
+    color: white;
+    text-decoration: none;
 }
 
 header img {
@@ -100,4 +104,21 @@ h1 {
     color: white;
 }
 
-/*Section*/
+/*Section Services*/
+.containerServices  div {
+    background-color: red;
+    width: 60%;
+    margin-left: 80%;
+    
+}
+
+.containerServices aside {
+    background-color: pink;
+    width: 25%;
+}
+
+.containerServices img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
