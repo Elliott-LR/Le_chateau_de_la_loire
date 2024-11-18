@@ -1,58 +1,98 @@
+/* Importe la police "Inter" depuis Google Fonts, avec diverses options de style, taille et épaisseur. */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+/* Applique un style global pour annuler les marges et les paddings par défaut des éléments et 
+utilise `box-sizing: border-box` pour inclure padding et border dans les dimensions totales de l'élément. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Définit la police "Inter" pour tout le contenu de la page. */
+body {
+    font-family: "Inter", serif;
+}
+
+/* Classe fonctionelle pour un conteneur Flexbox qui permet de répartir les éléments en lignes
+et de les faire passer à la ligne suivante si nécessaire. */
 .flex {
     display: flex;
     flex-wrap: wrap;
 }
 
-body {
-    font-family: "Inter", serif;
-}
-
+/* Classe fonctionelle pour distribuer les éléments enfants d'un conteneur Flex avec de l'espace entre chaque élément. */
 .spaceBetween {
     justify-content: space-between;
 }
 
+/* Classe utilitaire pour aligner les éléments enfants d'un conteneur Flex sur l'axe vertical (au centre). */
+.alignCenter{
+    align-items: center;
+}
+
+/*Largeurs et colonnes*/
+.width30{
+    width: 30%
+}
+.width45{
+    width: 45%;
+}
+.width40{
+    width: 40%;
+}
+.width60{
+    width: 60%;
+}
+.width70{
+    width: 70%;
+}
+
+/* Style des liens pour enlever le soulignement, les afficher en blanc et les passer en inline-block pour plus de contrôle notament des marges. */
 a {
     display: inline-block;
 }
 
+/* Supprime les puces ou numérotations des éléments de liste (`li`). */
 li {
     list-style: none;
 }
 
-.alignItems {
-    align-items: center;
-}
+/* Style des boutons : couleur de fond, espacement intérieur, bords arrondis et taille de police plus grande. */
 
 .btn {
     background-color: #B9625D;
     padding: 16px 55px;
     border-radius: 15px;
     font-size: 1.5rem;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
-/*HEADER*/
+
+/* HEADER */
+
+/* Style de l'en-tête : couleur de fond, position fixe en haut de la page avec une largeur de 100% et une priorité d'empilement
+(z-index) de 1 pour apparaître au-dessus du reste du contenu. */
+header {
+    padding: 0px 40px;
+    background-color: #B9625D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    width: 100%;
+}
+
+/* Définit la largeur de la barre de navigation dans l'en-tête. */
 header nav {
     width: 40%;
 }
 
-header {
-    padding: 0px 20px;
-    background-color: red;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
+/* Définit la taille des images dans l'en-tête à 15% de la largeur du conteneur parent. */
+header img {
+    width: 15%;
 }
 
 header a {
@@ -60,65 +100,151 @@ header a {
     text-decoration: none;
 }
 
-header img {
-    width: 15%;
-}
 
-.bgHeader {
-    background-color: #B9625D;
-}
+/* HERO */
 
-/*Hero*/
+/* Style de la section `hero` (bannière principale) : prend 100% de la largeur et de la hauteur de la fenêtre, 
+avec position relative pour permettre le positionnement absolu des éléments enfants. */
 .hero {
     width: 100%;
     height: 100vh;
     position: relative;
+    padding: 0 0;
 }
 
+/* Image de la section `hero` : prend tout l'espace disponible avec un ajustement de type "cover" pour conserver le ratio d'image. */
 .hero img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+/* Style d'un conteneur de texte superposé sur la section `hero` : 
+   - Couleur de fond semi-transparente,
+   - Positionné au centre de la bannière en utilisant `position: absolute` pour qu'elle passe devant l'image et `transform` pour "définir son centre" afin de mieux la placer.
+   - Taille de 50% de largeur, centrage du texte, et effet flouté en arrière-plan (backdrop-filter). */
 .hero div {
-    background-color: rgba(255, 255, 255, 0.062);
+    background-color: rgba(40, 40, 40, 0.314);
     width: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 180px 64px;
+    transform: translate(-50%, -50%); 
+    text-align: center;  
+    padding: 64px;
     border-radius: 23px;
     backdrop-filter: blur(10px);
 }
-
+section, footer{
+   
+    padding: 64px 0px;
+}
+/* Style des titres principaux (h1) dans la bannière `hero` : taille de 40px, couleur blanche et marge en bas. */
 h1 {
     font-size: 40px;
     margin-bottom: 15px;
     color: white;
 }
+h3{
+    text-align: center;
+    margin-bottom: 32px;
+    font-size: 30px;
+    color:#B9625D;
+    font-weight: 700;
+}
+.bg-pink h3{
+    color: #fff;
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 16px;
+}
 
+
+/* Style des paragraphes dans la section `hero` : taille de 30px, couleur blanche, et marge en bas. */
 .hero p {
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     color: white;
 }
+.text-center {
+    text-align: center;
+    margin-top: 16px;
+}
+/* SECTION SERVICES */
 
-/*Section Services*/
-.containerServices  div {
-    background-color: red;
-    width: 60%;
-    margin-left: 80%;
+.gap32{
     
+    gap: 32px; 
 }
 
-.containerServices aside {
-    background-color: pink;
-    width: 25%;
+.containerServices aside a{
+    margin-bottom: 8px;
+    color: #000;
+    text-decoration: underline;
+}
+.containerServices aside p{
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.sticky{
+    width: 100%;
+    position: sticky;
+    top: 80px;
 }
 
 .containerServices img {
     width: 300px;
     height: 300px;
     object-fit: cover;
+}
+.container{
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+
+.card{
+    position:relative;
+    display: block;
+    color: white;
+    border-radius: 23px;
+}
+.card img{
+    border-radius: 23px;
+}
+.card h2{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+/*Filigrane*/
+.filigrane{
+    position: fixed;
+    top: 192px;
+    left:0px;
+    z-index: -1;
+}
+
+/*Couleur d'arriere plan*/
+.bg-pink{
+    background-color: #B9625D;
+    /*tous les textes sur fonds rose sont blancs*/
+    color:#fff;
+}
+
+
+/*footer*/
+footer{
+    color: #fff;
+}
+footer a{
+    display:block ;
+    color: #fff;
+    text-decoration: none;
+}
+footer nav ul li, footer address p, footer address a{
+    margin-bottom: 8px;
 }
